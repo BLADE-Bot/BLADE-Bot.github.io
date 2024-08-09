@@ -1,0 +1,111 @@
+(:action grab-kettle-from-cabinet-right-side-and-place-on-stove
+ :parameters (?kettle - item ?stove - item ?cabinet-right-door - item ?cabinet-right - item)
+ :precondition (and (is-kettle ?kettle) (is-stove ?stove) (is-cabinet-right ?cabinet-right)
+                    (is-cabinet-right-door ?cabinet-right-door)
+                    (is-in-cabinet-right ?kettle) (is-open ?cabinet-right-door))
+ :effect (and (is-on ?kettle ?stove) (not (is-in-cabinet-right ?kettle)))
+ :body (then
+   (grasp ?kettle ?cabinet-right)
+   (move ?kettle)
+   (place ?kettle ?stove)
+ )
+)
+
+
+(:action grab-kettle-from-cabinet-left-side-and-place-on-stove
+ :parameters (?kettle - item ?stove - item ?cabinet-left-door - item)
+ :precondition (and (is-kettle ?kettle) (is-cabinet-left-door ?cabinet-left-door)
+                    (is-cabinet-left ?cabinet-left)
+                    (is-stove ?stove) (is-in-cabinet-left ?kettle) (is-open ?cabinet-left-door))
+ :effect (and (is-on ?kettle ?stove) (not (is-in-cabinet-left ?kettle)))
+ :body (then
+   (grasp ?kettle ?cabinet-left)
+   (move ?kettle)
+   (place ?kettle ?stove)
+ )
+)
+
+
+(:action place-teabag-from-drawer-to-kettle
+ :parameters (?teabag - item ?drawer - item ?kettle - item ?stove - item)
+ :precondition (and
+   (is-teabag ?teabag)
+   (is-drawer ?drawer)
+   (is-kettle ?kettle)
+   (is-stove ?stove)
+   (is-open ?drawer)
+   (is-on ?kettle ?stove)
+   (is-in-drawer ?teabag))
+ :effect (and
+   (is-in-kettle ?teabag)
+   (not (is-in-drawer ?teabag)))
+ :body (then
+   (grasp ?teabag ?drawer)
+   (move ?teabag)
+   (place ?teabag ?kettle)
+ )
+)
+
+
+(:action move-kettle-away-from-cabinet-doors
+ :parameters (?kettle - item ?cabinet-left-door - item ?cabinet-right-door - item)
+ :precondition (and
+   (is-kettle ?kettle)
+   (is-cabinet-left ?cabinet-left)
+   (is-cabinet-right ?cabinet-right)
+   (or (is-blocking ?kettle ?cabinet-left-door) (is-blocking ?kettle ?cabinet-right-door))
+ )
+ :effect (and
+   (not (is-blocking ?kettle ?cabinet-left-door))
+   (not (is-blocking ?kettle ?cabinet-right-door))
+ )
+ :body (then
+   (grasp ?kettle)
+   (move ?kettle)
+   (place ?kettle)
+ )
+)
+
+
+(:action open-cabinet-door-left-for-finding-object
+ :parameters (?cabinet-left-door - item ?pot - item)
+ :precondition (and (is-cabinet-left-door ?cabinet-left-door) (is-pot ?pot) (is-closed ?cabinet-left-door))
+ :effect (and (is-open ?cabinet-left-door) (not (is-closed ?cabinet-left-door)) (not (is-blocking ?pot ?cabinet-left-door)))
+ :body (then
+   (close)
+   (push ?cabinet-left-door)
+   (open)
+ )
+)
+
+
+(:action open-cabinet-door-right-for-finding-object
+ :parameters (?cabinet-right-door - item ?pot - item)
+ :precondition (and (is-cabinet-right-door ?cabinet-right-door)
+                    (is-pot ?pot)
+                    (is-closed ?cabinet-right-door)
+                    (not (is-blocking ?pot ?cabinet-right-door)))
+ :effect (and (is-open ?cabinet-right-door)
+              (not (is-closed ?cabinet-right-door)))
+ :body (then
+   (close)
+   (transit-cont ?cabinet-right-door)
+   (open)
+ )
+)
+
+
+(:action open-drawer
+ :parameters (?drawer - item)
+ :precondition (and 
+   (is-drawer ?drawer) 
+   (is-closed ?drawer))
+ :effect (and 
+   (is-open ?drawer) 
+   (not (is-closed ?drawer)))
+ :body (then
+   (close)
+   (push ?drawer)
+   (open)
+ )
+)

@@ -1,0 +1,117 @@
+(:action lift-kettle-from-table-and-place-in-sink
+ :parameters (?kettle - item ?table - item ?sink - item)
+ :precondition (and
+   (is-kettle ?kettle)
+   (is-table ?table)
+   (on-table ?kettle)
+   (is-sink ?sink))
+ :effect (and
+   (in-sink ?kettle)
+   (not (on-table ?kettle)))
+ :body (then
+   (grasp ?kettle ?table)
+   (move ?kettle)
+   (place ?kettle ?sink)
+ )
+)
+
+
+(:action move-faucet-head-over-sink
+ :parameters (?faucet - item ?sink - item)
+ :precondition (and (is-faucet ?faucet) (is-sink ?sink) (not (faucet-over-sink ?faucet ?sink)))
+ :effect (and (faucet-over-sink ?faucet ?sink))
+ :body (then
+   (close)
+   (push ?faucet)
+   (open)
+ )
+)
+
+(:action turn-on-faucet
+ :parameters (?faucet - item ?sink - item)
+ :precondition (and (is-faucet ?faucet) (is-sink ?sink) (is-faucet ?faucet) (faucet-over-sink ?faucet ?sink))
+ :effect (and (faucet-on ?faucet))
+ :body (then
+   (close)
+   (push ?faucet)
+   (open)
+ )
+)
+
+
+(:action turn-off-faucet
+ :parameters (?faucet - item)
+ :precondition (and 
+                 (is-faucet ?faucet) 
+                 (faucet-on ?faucet))
+ :effect (and 
+           (faucet-off ?faucet)
+           (not (faucet-on ?faucet)))
+ :body (then
+         (close)
+         (push ?faucet)
+         (open)
+       )
+)
+
+
+(:action turn-faucet-head-away
+ :parameters (?faucet-head - item ?sink - item)
+ :precondition (and (is-faucet ?faucet) (is-sink ?sink) (faucet-over-sink ?faucet ?sink))
+ :effect (and (not (faucet-over-sink ?faucet ?sink)))
+ :body (then
+   (close)
+   (push ?faucet)
+   (open)
+ )
+)
+
+
+(:action unblock-stove-by-moving-pot
+ :parameters (?pot - item ?stove - item ?table - item)
+ :precondition (and (is-pot ?pot) (is-stove ?stove) (is-table ?table) (on-stove ?pot))
+ :effect (and (not (on-stove ?pot)))
+ :body (then
+   (grasp ?pot ?stove)
+   (move ?pot)
+   (place ?pot ?table)
+ )
+)
+
+
+(:action move-kettle-from-sink-to-stove
+ :parameters (?kettle - item ?sink - item ?stove - item ?pot - item)
+ :precondition (and 
+    (is-kettle ?kettle) 
+    (is-sink ?sink) 
+    (is-stove ?stove) 
+    (in-sink ?kettle) 
+    (is-pot ?pot)
+    (not (on-stove ?pot))
+ )
+ :effect (and 
+    (on-stove ?kettle) 
+    (not (in-sink ?kettle))
+ )
+ :body (then
+    (grasp ?kettle ?sink)
+    (move ?kettle)
+    (place ?kettle ?stove)
+ )
+)
+
+(:action wait-to-be-filled
+ :parameters (?kettle - item ?faucet - item ?sink - item)
+ :precondition (and 
+    (is-kettle ?kettle) 
+    (is-faucet ?faucet) 
+    (is-sink ?sink) 
+    (faucet-over-sink ?faucet ?sink) 
+    (in-sink ?kettle) 
+    (faucet-on ?faucet)
+    (not (filled ?kettle)))
+ :effect (and 
+    (filled ?kettle))
+ :body (then 
+   (wait))
+)
