@@ -1,4 +1,4 @@
-# BLADE: Learning Compositional Behaviors from Demonstration and Language
+# Learning Compositional Behaviors from Demonstration and Language
 
 ## Website License
 Templated borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a>  
