@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="BLADE: Learning Compositional Behaviors from Demonstration and Language">
-  <meta name="keywords" content="Robotic Manipulation, Structural Representation, Model-based Planning, Foundation Models">
+  <meta name="description" content="BLADE: Learning Compositional Behaviors from Demonstration and Language">
+  <meta name="keywords"
+    content="Robotic Manipulation, Structural Representation, Model-based Planning, Foundation Models">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Learning Compositional Behaviors from Demonstration and Language</title>
 
@@ -18,63 +19,17 @@
     window.dataLayer = window.dataLayer || [];
   </script>
 
-  <script>
-    function updateInTheWild() {
-      var task = document.getElementById("inthewild-video-menu").value;
-
-      console.log("updateInTheWild", task)
-
-      var video = document.getElementById("inthewild-video");
-      video.src = "media/videos/" + 
-                  task + 
-                  ".m4v"
-      video.play();
-    }
-
-    function updateBimanual() {
-      var task = document.getElementById("bimanual-video-menu").value;
-
-      console.log("updateBimanual", task)
-
-      var video = document.getElementById("bimanual-video");
-      video.src = "media/videos/" + 
-                  task + 
-                  ".m4v"
-      video.play();
-    }
-
-    function updateClothes() {
-      var task = document.getElementById("clothes-video-menu").value;
-
-      console.log("updateclothes", task)
-
-      var img = document.getElementById("clothes-img");
-      img.src = "media/fold-strategies/" + 
-                  task + 
-                  ".jpeg"
-
-      var video = document.getElementById("clothes-video");
-      video.src = "media/videos/fold-" + 
-                  task + 
-                  ".mp4"
-      video.play();
-    }
-  </script>
-
-
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
 
   <link rel="stylesheet" href="./static/source_serif_4.css">
-  <link rel="stylesheet" href="./static/source_sans_3.css">  
+  <link rel="stylesheet" href="./static/source_sans_3.css">
   <link rel="stylesheet" href="./static/academicons.min.css">
   <link rel="stylesheet" href="./static/fontawesome/css/fontawesome.css">
   <link rel="stylesheet" href="./static/fontawesome/css/brands.css">
@@ -87,88 +42,96 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
 </head>
-<body onload="updateInTheWild();updateBimanual();">
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-fullhd">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Learning Compositional Behaviors<br>from Demonstration and Language</h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a target="_blank" href="http://weiyuliu.com">Weiyu Liu</a><sup>1*</sup>,
-            </span>
-            <span class="author-block">
-              <a target="_blank" href="https://www.neilnie.com">Neil Nie</a><sup>1*</sup>,
-            </span>
-            <span class="author-block">
-              <a target="_blank" href="https://ai.stanford.edu/~zharu/">Ruohan Zhang</a><sup>1</sup>,
-            </span>
-            <span class="author-block">
-              <a target="_blank" href="https://jiayuanm.com">Jiayuan Mao</a><sup>2&dagger;</sup>,
-            </span>
-            <span class="author-block">
-              <a target="_blank" href="http://jiajunwu.com">Jiajun Wu</a><sup>1&dagger;</sup>
-            </span>
+<body onload="document.getElementById('defaultOpen').click();">
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-fullhd">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Learning Compositional Behaviors<br>from Demonstration and Language
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a target="_blank" href="http://weiyuliu.com">Weiyu Liu</a><sup>1*</sup>,
+              </span>
+              <span class="author-block">
+                <a target="_blank" href="https://www.neilnie.com">Neil Nie</a><sup>1*</sup>,
+              </span>
+              <span class="author-block">
+                <a target="_blank" href="https://ai.stanford.edu/~zharu/">Ruohan Zhang</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a target="_blank" href="https://jiayuanm.com">Jiayuan Mao</a><sup>2&dagger;</sup>,
+              </span>
+              <span class="author-block">
+                <a target="_blank" href="http://jiajunwu.com">Jiajun Wu</a><sup>1&dagger;</sup>
+              </span>
+            </div>
+            <div class="is-size-5 affiliation">
+              <sup>1</sup>Stanford University,
+              <sup>2</sup>MIT
+            </div>
+            <br>
+            <div class="affiliation-note">
+              <sup>*</sup> indicates equal contributions, <sup>&dagger;</sup> indicates equal advising
+            </div>
+            <div class="button-container">
+              <a href="./blade.pdf" target="_blank" class="button"><i class="fa-light fa-file"></i>&emsp14;PDF</a>
+              <a href="http:" target="_blank" class="button"><i class="ai ai-arxiv"></i>&emsp14;arXiv</a>
+              <a href="https:" target="_blank" class="button"><i class="fa-light fa-film"></i>&emsp14;Video</a>
+              <a href="https:" target="_blank" class="button"><i class="fa-brands fa-x-twitter"></i>&emsp14;tl;dr</a>
+              <!-- <a href="https:" target="_blank" class="button"><i class="fa-light fa-code"></i>&emsp14;Code [Coming Soon]</a> -->
+            </div>
           </div>
-          <div class="is-size-5 affiliation">
-            <sup>1</sup>Stanford University,
-            <sup>2</sup>MIT
-          </div>
-          <br>
-          <div class="affiliation-note">
-            <sup>*</sup> indicates equal contributions, <sup>&dagger;</sup> indicates equal advising
-          </div>
-          <div class="button-container">
-            <a href="./blade.pdf" target="_blank" class="button"><i class="fa-light fa-file"></i>&emsp14;PDF</a>
-            <a href="http:" target="_blank" class="button"><i class="ai ai-arxiv"></i>&emsp14;arXiv</a>
-            <a href="https:" target="_blank" class="button"><i class="fa-light fa-film"></i>&emsp14;Video</a>
-            <a href="https:" target="_blank" class="button"><i class="fa-brands fa-x-twitter"></i>&emsp14;tl;dr</a>
-            <!-- <a href="https:" target="_blank" class="button"><i class="fa-light fa-code"></i>&emsp14;Code [Coming Soon]</a> -->
-        </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="hero teaser">
-  <div class="container is-max-widescreen">
-    <div class="hero-body">
-      <div class="container">
-        <!-- <div class="columns is-vcentered  is-centered">
+  <section class="hero teaser">
+    <div class="container is-max-widescreen">
+      <div class="hero-body">
+        <div class="container">
+          <!-- <div class="columns is-vcentered  is-centered">
           <video id="teaser" autoplay muted loop controls height="100%" width="100%">
             <source src="media/videos/teaser.mp4"
                     type="video/mp4">
           </video>
         </div> -->
-        <br>
-        <!-- <h2 class="subtitle has-text-centered">
+          <br>
+          <!-- <h2 class="subtitle has-text-centered">
         Large vision models and vision-language models can generate keypoint-based constraints, which can be optimized to achieve multi-stage, in-the-wild, bimanual, and reactive behaviors, without task-specific training or environment models. -->
-        <!-- </h2> -->
+          <!-- </h2> -->
+        </div>
       </div>
     </div>
-  </div>
 
-<div class="container is-max-widescreen">
-<div class="columns is-centered has-text-centered">
-  <div class="column is-four-fifths">
-    <h2 class="title is-3">Abstract</h2>
-    <div class="content has-text-justified">
-      <p>
-        We introduce Behavior from Language and Demonstration (BLADE), a framework for long-horizon robotic manipulation by integrating imitation learning and model-based planning. 
-        BLADE leverages language-annotated demonstrations, extracts abstract action knowledge from large language models (LLMs), and constructs a library of structured, high-level action representations.
-These representations include preconditions and effects grounded in visual perception for each high-level action, along with corresponding controllers implemented as neural network-based policies. 
-BLADE can recover such structured representations automatically, without manually labeled states or symbolic definitions.
-BLADE shows significant capabilities in generalizing to novel situations, including novel initial states, external state perturbations, and novel goals. 
-We validate the effectiveness of our approach both in simulation and on a real robot with a diverse set of objects with articulated parts, partial observability, and geometric constraints.
-      </p>
-    </div>
-  </div>
-</div>
+    <div class="container is-max-widescreen">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              We introduce Behavior from Language and Demonstration (BLADE), a framework for long-horizon robotic
+              manipulation by integrating imitation learning and model-based planning.
+              BLADE leverages language-annotated demonstrations, extracts abstract action knowledge from large language
+              models (LLMs), and constructs a library of structured, high-level action representations.
+              These representations include preconditions and effects grounded in visual perception for each high-level
+              action, along with corresponding controllers implemented as neural network-based policies.
+              BLADE can recover such structured representations automatically, without manually labeled states or
+              symbolic definitions.
+              BLADE shows significant capabilities in generalizing to novel situations, including novel initial states,
+              external state perturbations, and novel goals.
+              We validate the effectiveness of our approach both in simulation and on a real robot with a diverse set of
+              objects with articulated parts, partial observability, and geometric constraints.
+            </p>
+          </div>
+        </div>
+      </div>
 
-<!-- 
+      <!-- 
 <hr class="rounded">
 <div class="rows">
   <h2 class="title is-3">Walkthrough Video</h2>
@@ -178,114 +141,104 @@ We validate the effectiveness of our approach both in simulation and on a real r
 </div> -->
 
 
-<hr class="rounded">
-<div class="rows">
-  <h2 class="title is-3">Overview of BLADE</h2>
-  
-  <video id="method" autoplay="autoplay" height="100%" width="100%">
-    <source src="media/videos/methods_figure_animated.mov">
-  </video>
+      <hr class="rounded">
+      <div class="rows">
+        <h2 class="title is-3">Overview of BLADE</h2>
 
-  <p class="content has-text-justified">(a) BLADE receives language-annotated human demonstrations, 
-    (b) segments demonstrations into contact primitives, and learns a structured behavior representation. 
-    (c) BLADE can generalizes to novel initial conditions, leveraging bi-level planning and execution to achieve goal states.</b>
-  </p>
-</div>
+        <video id="method" autoplay="autoplay" height="100%" width="100%">
+          <source src="media/videos/methods_figure_animated.mov">
+        </video>
 
-<hr class="rounded">
-<div class="rows">
-  <h2 class="title is-3">Behavior Descriptions Learning</h2>
-
-  <video id="behavior_generation" autoplay="autoplay" height="100%" width="100%">
-    <source src="media/videos/behavior_description_antimated.m4v", type="video/mp4" />
-  </video>
-
-  <p class="content has-text-justified">Starting with (a) human demonstrations with language annotations, BLADE segments (b) the demonstrations into contact primitives
-     such as close-gripper, and push.  Then, BLADE (d) generates operators using an LLM, defining actions with specific preconditions and effects. (c) These operators allow for automatic predicate annotation based on the preconditions and effects.</b>
-  </p>
-
-  </div>
-
-  <hr class="rounded">
-<div class="rows">
-  <h2 class="title is-3">Real-World Results</h2>
-
-
-  <div style="text-align: center;">
-    <img src="media/figures/real_world_results.jpeg" width="100%" class="method-image"/>
-  </div>
-
-  <p class="content has-text-justified">
-
-    <b>Make Tea</b> features a toy kitchen designed to simulate boiling water on a stove. The robot must assess the available space on the stove for the kettle. 
-    It also needs to manage the dependencies between actions, such as the faucet must be turned away before the kettle can be placed into the sink to avoid collisions. 
-    <b>Boil Water</b> involves a tabletop task aimed at preparing tea, incorporating a cabinet, a drawer, and a stove. The robot must locate the kettle, potentially hidden within the cabinet, 
-    and a teabag in the drawer. Additionally, it must consider geometric constraints by removing obstacles that block the cabinet doors. 
-    In both environments, our model significantly outperforms the VLM-based planner Robot-VILA.
-
-  </p>
-
-  <!-- <h3 class="title is-4">Robust to Task Perturbations by Replanning</h3> -->
-  <video id="method" muted loop controls height="100%" width="100%">
-    <source src="media/videos/human_perturbation.mp4">
-  </video>
-  <script>
-    $('video').each(function(){
-      if ($(this).is(":in-viewport")) {
-          $(this)[0].play();
-      } else {
-          $(this)[0].pause();
-      }
-  })
-  </script>
-  <p style="margin-bottom:1cm;"></p>
-
-
-  <!-- <h3 class="title is-4">Handling Partial Observability by Replanning</h3> -->
-  <video id="method" muted loop controls height="100%" width="100%">
-    <source src="media/videos/partial_obs.mp4">
-  </video>
-  <p style="margin-bottom:1cm;"></p>
-
-  <!-- <h3 class="title is-4">Handling Geometric Constraints with Learned Pre-conditions</h3> -->
-  <video id="method" muted loop controls height="100%" width="100%">
-    <source src="media/videos/geometric_constraints.mp4">
-  </video>
-  <p style="margin-bottom:1cm;"></p>
-
-
-  <!-- <h3 class="title is-4">Generalize to Unseen Initial States by Composing Learned Behaviors</h3> -->
-  <video id="method" muted loop controls height="100%" width="100%">
-    <source src="media/videos/initial_conditions.mp4">
-  </video>
-  </div>
-
-
-<hr class="rounded">
-<div class="rows">
-  <h2 class="title is-3">In-the-Wild Kitchen Cleaning</h2>
-
-  <div class="columns">
-    <div class="column has-text-centered">
-      <div class="select is-rounded">     
-        <select id="clothes-video-menu" onchange="updateClothes()">
-        <option value="sweater" selected="selected">Training Initial Conditions: </option>
-        <option value="shirt">Unseen Initial Conditions: </option>
-        <option value="hoodie">UnseenInitial Conditions: </option>
-        <option value="vest">Unseen Initial Conditions: </option>
-        </select>
+        <p class="content has-text-justified">(a) BLADE receives language-annotated human demonstrations,
+          (b) segments demonstrations into contact primitives, and learns a structured behavior representation.
+          (c) BLADE can generalizes to novel initial conditions, leveraging bi-level planning and execution to achieve
+          goal states.</b>
+        </p>
       </div>
-    </div>
 
-  </div>
-  
-  <p class="content has-text-justified"></p>
-  
+      <hr class="rounded">
+      <div class="rows">
+        <h2 class="title is-3">Behavior Descriptions Learning</h2>
 
-</div>
+        <video id="behavior_generation" autoplay="autoplay" height="100%" width="100%">
+          <source src="media/videos/behavior_description_antimated.m4v" , type="video/mp4" />
+        </video>
+
+        <p class="content has-text-justified">Starting with (a) human demonstrations with language annotations, BLADE
+          segments (b) the demonstrations into contact primitives
+          such as close-gripper, and push. Then, BLADE (d) generates operators using an LLM, defining actions with
+          specific preconditions and effects. (c) These operators allow for automatic predicate annotation based on the
+          preconditions and effects.</b>
+        </p>
+
+      </div>
+
+      <hr class="rounded">
+      <div class="rows">
+        <h2 class="title is-3">Real-World Results</h2>
 
 
-<!-- 
+        <div style="text-align: center;">
+          <img src="media/figures/real_world_results.jpeg" width="100%" class="method-image" />
+        </div>
+
+        <p class="content has-text-justified">
+
+          <b>Make Tea</b> features a toy kitchen designed to simulate boiling water on a stove. The robot must assess
+          the available space on the stove for the kettle.
+          It also needs to manage the dependencies between actions, such as the faucet must be turned away before the
+          kettle can be placed into the sink to avoid collisions.
+          <b>Boil Water</b> involves a tabletop task aimed at preparing tea, incorporating a cabinet, a drawer, and a
+          stove. The robot must locate the kettle, potentially hidden within the cabinet,
+          and a teabag in the drawer. Additionally, it must consider geometric constraints by removing obstacles that
+          block the cabinet doors.
+          In both environments, our model significantly outperforms the VLM-based planner Robot-VILA.
+
+        </p>
+
+        <p class="content has-text-justified">
+          We evaluate BLADE on four generalization tasks: <b>unseen initial conditions</b>, <b>human perturbations</b>,
+          <b>geometric constraints</b>, and <b>partial observability</b>.
+          Here are examples from the four generalization tasks in three different real-world environments.
+        </p>
+
+        <div class="tab">
+          <button class="tablinks" onclick="changeTab(event, 'initial_conditions')" id="defaultOpen">Unseen Initial Conditions</button>
+          <button class="tablinks" onclick="changeTab(event, 'human_perturbation')">Human Perturbation</button>
+          <button class="tablinks" onclick="changeTab(event, 'geometric_constraints')">Geometric Constraints</button>
+          <button class="tablinks" onclick="changeTab(event, 'partial_observability')">Partial Observability</button>
+        </div>
+        
+        <div id="human_perturbation" class="tabcontent">
+          <video id="method" autoplay muted loop controls height="100%" width="100%">
+              <source src="media/videos/human_perturbation.mp4">
+          </video>
+          <p style="margin-bottom:1cm;"></p>
+        </div>
+
+        <div id="partial_observability" class="tabcontent">
+          <video id="method" autoplay muted loop controls height="100%" width="100%">
+              <source src="media/videos/partial_obs.mp4">
+          </video>
+          <p style="margin-bottom:1cm;"></p>
+        </div>
+
+        <div id="geometric_constraints" class="tabcontent">
+          <video id="method" autoplay muted loop controls height="100%" width="100%">
+              <source src="media/videos/geometric_constraints.mp4">
+          </video>
+          <p style="margin-bottom:1cm;"></p>
+        </div>
+
+        <div id="initial_conditions" class="tabcontent">
+          <video id="method" autoplay muted loop controls height="100%" width="100%">
+              <source src="media/videos/initial_conditions.mp4">
+          </video>
+        </div>
+
+        <p class="content has-text-justified"></p>
+
+      <!-- 
 
 <hr class="rounded">
 
@@ -332,71 +285,79 @@ We validate the effectiveness of our approach both in simulation and on a real r
     </div>
 </div> -->
 
-<hr class="rounded">
-<div class="rows">
-  <h2 class="title is-3">Generalization Results in Simulation</h2>
+      <hr class="rounded">
+      <div class="rows">
+        <h2 class="title is-3">Generalization Results in Simulation</h2>
 
-  <p class="content has-text-justified">We evaluate BLADE on three generalization tasks in simulation: <b> abstract goals</b>, <b>partial observability</b>, and <b>geometric constraints</b>. Here are examples from the three generalization tasks in the CALVIN simulation environment. 
-    Successfully completing these tasks require planning for and executing 3-7 actions.</p>
-    
+        <p class="content has-text-justified">We evaluate BLADE on three generalization tasks in simulation: <b>
+            abstract goals</b>, <b>partial observability</b>, and <b>geometric constraints</b>. Here are examples from
+          the three generalization tasks in the CALVIN simulation environment.
+          Successfully completing these tasks require planning for and executing 3-7 actions.</p>
 
-  <div style="text-align: center;">
-    <img src="media/figures/calvin_results.jpg" width="100%" class="method-image"/>
+
+        <div style="text-align: center;">
+          <img src="media/figures/calvin_results.jpg" width="100%" class="method-image" />
+        </div>
+
+        <p class="content has-text-justified"> We compare BLADE with two groups of baselines: hierarchical policies with
+          planning in latent spaces and LLM/VLM-based methods for robotic planning.
+          For the former, we use HULC, the SOTA method in CALVIN, which learns a hierarchical policy from
+          language-annotated play data using hindsight labeling.
+          For the latter, we use SayCan, Robot-VILA, and Text2Motion. Since Text2Motion assumes access to ground-truth
+          symbolic states, we compare Text2Motion with BLADE in two settings: one with the ground-truth states and the
+          other with the state classifiers learned by BLADE.</p>
+
+        <div style="text-align: center;">
+          <img src="media/figures/simulation_results_table.png" width="65%" class="method-image" />
+        </div>
+
+      </div>
+
+      <hr class="rounded">
+      <h2 class="title is-3">Acknowledgments</h2>
+      <p>
+        This work is in part supported by Analog Devices, MIT Quest for Intelligence,
+        MIT-IBM Watson AI Lab, ONR Science of AI, NSF grant 2214177, ONR N00014-23-1-2355,
+        AFOSR YIP FA9550-23-1-0127, AFOSR grant FA9550-22-1-0249, ONR MURI N00014-22-1-2740,
+        ARO grant W911NF-23-1-0034.
+        We extend our gratitude to Jonathan Yedidia, Nicholas Moran, Zhutian Yang, Manling Li,
+        Joy Hsu, Stephen Tian, Chen Wang, Wenlong Wang, Yunfan Jiang, Chengshu Li, Josiah Wong,
+        Mengdi Xu, Sanjana Srivastava, Yunong Liu, Tianyuan Dai, Wensi Ai, Yihe Tang,
+        the members of the Stanford Vision and Learning Lab, and the anonymous reviewers for
+        insightful discussions.
+      </p>
+      <hr class="rounded">
+      <h2 class="title is-3">BibTeX</h2>
+      <p class="bibtex">
+        @inproceedings{liu2024BLADE, <br>
+        &nbsp;&nbsp;title = {BLADE: Learning Compositional Behaviors from Demonstration and Language}, <br>
+        &nbsp;&nbsp;author = {Liu, Weiyu and Nie, Neil and and Zhang, Ruohan and Mao, Jiayuan and Wu, Jiajun}, <br>
+        &nbsp;&nbsp;booktitle = {CoRL}, <br>
+        &nbsp;&nbsp;year = {2024} <br>
+        }
+      </p>
+
+  </section>
   </div>
 
-  <p class="content has-text-justified"> We compare BLADE with two groups of baselines: hierarchical policies with planning in latent spaces and LLM/VLM-based methods for robotic planning. 
-    For the former, we use HULC, the SOTA method in CALVIN, which learns a hierarchical policy from language-annotated play data using hindsight labeling. 
-    For the latter, we use SayCan, Robot-VILA, and Text2Motion. Since Text2Motion assumes access to ground-truth symbolic states, we compare Text2Motion with BLADE in two settings: one with the ground-truth states and the other with the state classifiers learned by BLADE.</p>
-
-  <div style="text-align: center;">
-    <img src="media/figures/simulation_results_table.png" width="65%" class="method-image"/>
-  </div>
-
-</div>
-
-<hr class="rounded">
-<h2 class="title is-3">Acknowledgments</h2>
-<p>
-  This work is in part supported by Analog Devices, MIT Quest for Intelligence, 
-  MIT-IBM Watson AI Lab, ONR Science of AI, NSF grant 2214177, ONR N00014-23-1-2355, 
-  AFOSR YIP FA9550-23-1-0127, AFOSR grant FA9550-22-1-0249, ONR MURI N00014-22-1-2740,
-  ARO grant W911NF-23-1-0034. 
-  We extend our gratitude to Jonathan Yedidia, Nicholas Moran, Zhutian Yang, Manling Li, 
-  Joy Hsu, Stephen Tian, Chen Wang, Wenlong Wang, Yunfan Jiang, Chengshu Li, Josiah Wong, 
-  Mengdi Xu, Sanjana Srivastava, Yunong Liu, Tianyuan Dai, Wensi Ai, Yihe Tang,
-  the members of the Stanford Vision and Learning Lab, and the anonymous reviewers for 
-  insightful discussions.
-</p>
-<hr class="rounded">
-<h2 class="title is-3">BibTeX</h2>
-<p class="bibtex">
-    @inproceedings{liu2024BLADE, <br>
-    &nbsp;&nbsp;title = {BLADE: Learning Compositional Behaviors from Demonstration and Language}, <br>
-    &nbsp;&nbsp;author = {Liu, Weiyu and Nie, Neil and and Zhang, Ruohan and Mao, Jiayuan and Wu, Jiajun}, <br>
-    &nbsp;&nbsp;booktitle = {CoRL}, <br>
-    &nbsp;&nbsp;year = {2024} <br>
-    }
-</p>
-
-</section>
-</div>
-
-<footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column">
-        <div class="content has-text-centered">
-          <p>
-            Website template borrowed from <a href="https://nerfies.github.io">Nerfies</a>,
-            <a href="https://dex-cap.github.io">DexCap</a>,
-            and <a href="https://transic-robot.github.io">TRANSIC</a>, and <a href="https://rekep-robot.github.io">ReKep</a>. 
-          </p>
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content has-text-centered">
+            <p>
+              Website template borrowed from <a href="https://nerfies.github.io">Nerfies</a>,
+              <a href="https://dex-cap.github.io">DexCap</a>,
+              and <a href="https://transic-robot.github.io">TRANSIC</a>, and <a
+                href="https://rekep-robot.github.io">ReKep</a>.
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
 
 </body>
+
 </html>
