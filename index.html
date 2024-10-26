@@ -26,9 +26,9 @@
       console.log("updateInTheWild", task)
 
       var video = document.getElementById("inthewild-video");
-      video.src = "media/videos/" + 
-                  task + 
-                  ".m4v"
+      video.src = "media/videos/" +
+        task +
+        ".m4v"
       video.play();
     }
 
@@ -38,9 +38,9 @@
       console.log("updateBimanual", task)
 
       var video = document.getElementById("bimanual-video");
-      video.src = "media/videos/" + 
-                  task + 
-                  ".m4v"
+      video.src = "media/videos/" +
+        task +
+        ".m4v"
       video.play();
     }
 
@@ -50,32 +50,30 @@
       console.log("updateclothes", task)
 
       var img = document.getElementById("clothes-img");
-      img.src = "media/fold-strategies/" + 
-                  task + 
-                  ".jpeg"
+      img.src = "media/fold-strategies/" +
+        task +
+        ".jpeg"
 
       var video = document.getElementById("clothes-video");
-      video.src = "media/videos/fold-" + 
-                  task + 
-                  ".mp4"
+      video.src = "media/videos/fold-" +
+        task +
+        ".mp4"
       video.play();
     }
   </script>
 
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
 
   <link rel="stylesheet" href="./static/source_serif_4.css">
-  <link rel="stylesheet" href="./static/source_sans_3.css">  
+  <link rel="stylesheet" href="./static/source_sans_3.css">
   <link rel="stylesheet" href="./static/academicons.min.css">
   <link rel="stylesheet" href="./static/fontawesome/css/fontawesome.css">
   <link rel="stylesheet" href="./static/fontawesome/css/brands.css">
@@ -88,7 +86,8 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
 </head>
-<body onload="document.getElementById('defaultOpen').click();">
+
+<body>
 
   <section class="hero">
     <div class="hero-body">
@@ -247,43 +246,91 @@
           Here are examples from the four generalization tasks in three different real-world environments.
         </p>
 
+        <h2 class="title is-3">Real-World Kitchen Setting</h2>
+
         <div class="tab">
-          <button class="tablinks" onclick="changeTab(event, 'initial_conditions')" id="defaultOpen">Unseen Initial Conditions</button>
-          <button class="tablinks" onclick="changeTab(event, 'human_perturbation')">Human Perturbation</button>
-          <button class="tablinks" onclick="changeTab(event, 'geometric_constraints')">Geometric Constraints</button>
-          <button class="tablinks" onclick="changeTab(event, 'partial_observability')">Partial Observability</button>
+          <button class="tablinks" id="initial_conditions_real_kitchen_button"
+            onclick="changeTab(event, 'initial_conditions_real_kitchen', '_real_kitchen')">Unseen
+            Initial Conditions</button>
+          <button class="tablinks" id="human_perturbation_real_kitchen_button"
+            onclick="changeTab(event, 'human_perturbation_real_kitchen', '_real_kitchen')">Human Perturbation</button>
+          <!-- <button class="tablinks" onclick="changeTab(event, 'geometric_constraints_real_kitchen')">Geometric Constraints</button>
+          <button class="tablinks" onclick="changeTab(event, 'partial_observability_real_kitchen')">Partial Observability</button> -->
         </div>
-        
-        <div id="human_perturbation" class="tabcontent">
+
+        <div id="human_perturbation_real_kitchen" class="tabcontent">
           <video id="method" autoplay muted loop controls height="100%" width="100%">
-              <source src="media/videos/human_perturbation.mp4">
+            <source src="media/videos/human_perturbation_kitchen.mp4">
           </video>
           <p style="margin-bottom:1cm;"></p>
         </div>
 
-        <div id="partial_observability" class="tabcontent">
+        <div id="partial_observability_real_kitchen" class="tabcontent">
           <video id="method" autoplay muted loop controls height="100%" width="100%">
-              <source src="media/videos/partial_obs.mp4">
+            <source src="media/videos/partial_obs.mp4">
           </video>
           <p style="margin-bottom:1cm;"></p>
         </div>
 
-        <div id="geometric_constraints" class="tabcontent">
+        <div id="geometric_constraints_real_kitchen" class="tabcontent">
           <video id="method" autoplay muted loop controls height="100%" width="100%">
-              <source src="media/videos/geometric_constraints.mp4">
+            <source src="media/videos/geometric_constraints.mp4">
           </video>
           <p style="margin-bottom:1cm;"></p>
         </div>
 
-        <div id="initial_conditions" class="tabcontent">
+        <div id="initial_conditions_real_kitchen" class="tabcontent">
           <video id="method" autoplay muted loop controls height="100%" width="100%">
-              <source src="media/videos/initial_conditions.mp4">
+            <source src="media/videos/initial_condition_kitchen.mp4">
+          </video>
+        </div>
+
+        <p style="margin-bottom:1cm;"></p>
+
+        <h2 class="title is-3">Real-World Tabletop Setting</h2>
+
+        <div class="tab">
+          <button class="tablinks" id="initial_conditions_tabletop_button"
+            onclick="changeTab(event, 'initial_conditions_tabletop', '_tabletop')" id="defaultOpen">Unseen Initial
+            Conditions</button>
+          <button class="tablinks" id="human_perturbation_tabletop_button"
+            onclick="changeTab(event, 'human_perturbation_tabletop', '_tabletop')">Human Perturbation</button>
+          <button class="tablinks" id="geometric_constraints_tabletop_button"
+            onclick="changeTab(event, 'geometric_constraints_tabletop', '_tabletop')">Geometric Constraints</button>
+          <button class="tablinks" id="partial_observability_tabletop_button"
+            onclick="changeTab(event, 'partial_observability_tabletop', '_tabletop')">Partial Observability</button>
+        </div>
+
+        <div id="human_perturbation_tabletop" class="tabcontent">
+          <video id="method" autoplay muted loop controls height="100%" width="100%">
+            <source src="media/videos/human_perturbation.mp4">
+          </video>
+          <p style="margin-bottom:1cm;"></p>
+        </div>
+
+        <div id="partial_observability_tabletop" class="tabcontent">
+          <video id="method" autoplay muted loop controls height="100%" width="100%">
+            <source src="media/videos/partial_obs.mp4">
+          </video>
+          <p style="margin-bottom:1cm;"></p>
+        </div>
+
+        <div id="geometric_constraints_tabletop" class="tabcontent">
+          <video id="method" autoplay muted loop controls height="100%" width="100%">
+            <source src="media/videos/geometric_constraints.mp4">
+          </video>
+          <p style="margin-bottom:1cm;"></p>
+        </div>
+
+        <div id="initial_conditions_tabletop" class="tabcontent">
+          <video id="method" autoplay muted loop controls height="100%" width="100%">
+            <source src="media/videos/initial_conditions.mp4">
           </video>
         </div>
 
         <p class="content has-text-justified"></p>
 
-      <!-- 
+        <!-- 
 
 <hr class="rounded">
 
@@ -330,57 +377,58 @@
     </div>
 </div> -->
 
-      <hr class="rounded">
-      <div class="rows">
-        <h2 class="title is-3">Generalization Results in Simulation</h2>
+        <hr class="rounded">
+        <div class="rows">
+          <h2 class="title is-3">Generalization Results in Simulation</h2>
 
-        <p class="content has-text-justified">We evaluate BLADE on three generalization tasks in simulation: <b>
-            abstract goals</b>, <b>partial observability</b>, and <b>geometric constraints</b>. Here are examples from
-          the three generalization tasks in the CALVIN simulation environment.
-          Successfully completing these tasks require planning for and executing 3-7 actions.</p>
+          <p class="content has-text-justified">We evaluate BLADE on three generalization tasks in simulation: <b>
+              abstract goals</b>, <b>partial observability</b>, and <b>geometric constraints</b>. Here are examples from
+            the three generalization tasks in the CALVIN simulation environment.
+            Successfully completing these tasks require planning for and executing 3-7 actions.</p>
 
 
-        <div style="text-align: center;">
-          <img src="media/figures/calvin_results.jpg" width="100%" class="method-image" />
+          <div style="text-align: center;">
+            <img src="media/figures/calvin_results.jpg" width="100%" class="method-image" />
+          </div>
+
+          <p class="content has-text-justified"> We compare BLADE with two groups of baselines: hierarchical policies
+            with
+            planning in latent spaces and LLM/VLM-based methods for robotic planning.
+            For the former, we use HULC, the SOTA method in CALVIN, which learns a hierarchical policy from
+            language-annotated play data using hindsight labeling.
+            For the latter, we use SayCan, Robot-VILA, and Text2Motion. Since Text2Motion assumes access to ground-truth
+            symbolic states, we compare Text2Motion with BLADE in two settings: one with the ground-truth states and the
+            other with the state classifiers learned by BLADE.</p>
+
+          <div style="text-align: center;">
+            <img src="media/figures/simulation_results_table.png" width="65%" class="method-image" />
+          </div>
+
         </div>
 
-        <p class="content has-text-justified"> We compare BLADE with two groups of baselines: hierarchical policies with
-          planning in latent spaces and LLM/VLM-based methods for robotic planning.
-          For the former, we use HULC, the SOTA method in CALVIN, which learns a hierarchical policy from
-          language-annotated play data using hindsight labeling.
-          For the latter, we use SayCan, Robot-VILA, and Text2Motion. Since Text2Motion assumes access to ground-truth
-          symbolic states, we compare Text2Motion with BLADE in two settings: one with the ground-truth states and the
-          other with the state classifiers learned by BLADE.</p>
-
-        <div style="text-align: center;">
-          <img src="media/figures/simulation_results_table.png" width="65%" class="method-image" />
-        </div>
-
-      </div>
-
-      <hr class="rounded">
-      <h2 class="title is-3">Acknowledgments</h2>
-      <p>
-        This work is in part supported by Analog Devices, MIT Quest for Intelligence,
-        MIT-IBM Watson AI Lab, ONR Science of AI, NSF grant 2214177, ONR N00014-23-1-2355,
-        AFOSR YIP FA9550-23-1-0127, AFOSR grant FA9550-22-1-0249, ONR MURI N00014-22-1-2740,
-        ARO grant W911NF-23-1-0034.
-        We extend our gratitude to Jonathan Yedidia, Nicholas Moran, Zhutian Yang, Manling Li,
-        Joy Hsu, Stephen Tian, Chen Wang, Wenlong Wang, Yunfan Jiang, Chengshu Li, Josiah Wong,
-        Mengdi Xu, Sanjana Srivastava, Yunong Liu, Tianyuan Dai, Wensi Ai, Yihe Tang,
-        the members of the Stanford Vision and Learning Lab, and the anonymous reviewers for
-        insightful discussions.
-      </p>
-      <hr class="rounded">
-      <h2 class="title is-3">BibTeX</h2>
-      <p class="bibtex">
-        @inproceedings{liu2024BLADE, <br>
-        &nbsp;&nbsp;title = {BLADE: Learning Compositional Behaviors from Demonstration and Language}, <br>
-        &nbsp;&nbsp;author = {Liu, Weiyu and Nie, Neil and and Zhang, Ruohan and Mao, Jiayuan and Wu, Jiajun}, <br>
-        &nbsp;&nbsp;booktitle = {CoRL}, <br>
-        &nbsp;&nbsp;year = {2024} <br>
-        }
-      </p>
+        <hr class="rounded">
+        <h2 class="title is-3">Acknowledgments</h2>
+        <p>
+          This work is in part supported by Analog Devices, MIT Quest for Intelligence,
+          MIT-IBM Watson AI Lab, ONR Science of AI, NSF grant 2214177, ONR N00014-23-1-2355,
+          AFOSR YIP FA9550-23-1-0127, AFOSR grant FA9550-22-1-0249, ONR MURI N00014-22-1-2740,
+          ARO grant W911NF-23-1-0034.
+          We extend our gratitude to Jonathan Yedidia, Nicholas Moran, Zhutian Yang, Manling Li,
+          Joy Hsu, Stephen Tian, Chen Wang, Wenlong Wang, Yunfan Jiang, Chengshu Li, Josiah Wong,
+          Mengdi Xu, Sanjana Srivastava, Yunong Liu, Tianyuan Dai, Wensi Ai, Yihe Tang,
+          the members of the Stanford Vision and Learning Lab, and the anonymous reviewers for
+          insightful discussions.
+        </p>
+        <hr class="rounded">
+        <h2 class="title is-3">BibTeX</h2>
+        <p class="bibtex">
+          @inproceedings{liu2024BLADE, <br>
+          &nbsp;&nbsp;title = {BLADE: Learning Compositional Behaviors from Demonstration and Language}, <br>
+          &nbsp;&nbsp;author = {Liu, Weiyu and Nie, Neil and and Zhang, Ruohan and Mao, Jiayuan and Wu, Jiajun}, <br>
+          &nbsp;&nbsp;booktitle = {CoRL}, <br>
+          &nbsp;&nbsp;year = {2024} <br>
+          }
+        </p>
 
   </section>
   </div>
@@ -404,5 +452,11 @@
 
 
 </body>
+
+<script>
+  document.getElementById('initial_conditions_real_kitchen_button').click();
+  document.getElementById('initial_conditions_tabletop_button').click();
+</script>
+
 
 </html>
