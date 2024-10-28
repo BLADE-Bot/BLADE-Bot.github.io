@@ -175,15 +175,6 @@
         </div>
       </div>
 
-      <!-- 
-<hr class="rounded">
-<div class="rows">
-  <h2 class="title is-3">Walkthrough Video</h2>
-  <div class="publication-video">
-      <iframe src="https://www.youtube.com/embed/2S8YhBdLdww" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-  </div>
-</div> -->
-
 
       <hr class="rounded">
       <div class="rows">
@@ -291,7 +282,7 @@
 
         <p style="margin-bottom:1cm;"></p>
 
-        <h2 class="title is-3">Real-World Tabletop Setting</h2>
+        <h2 class="title is-3">Real-World Tabletop Setting | Boil Water</h2>
 
         <div class="tab">
           <button class="tablinks" id="initial_conditions_tabletop_button"
@@ -299,10 +290,10 @@
             Conditions</button>
           <button class="tablinks" id="human_perturbation_tabletop_button"
             onclick="changeTab(event, 'human_perturbation_tabletop', '_tabletop')">Human Perturbation</button>
-          <button class="tablinks" id="geometric_constraints_tabletop_button"
+          <!-- <button class="tablinks" id="geometric_constraints_tabletop_button"
             onclick="changeTab(event, 'geometric_constraints_tabletop', '_tabletop')">Geometric Constraints</button>
           <button class="tablinks" id="partial_observability_tabletop_button"
-            onclick="changeTab(event, 'partial_observability_tabletop', '_tabletop')">Partial Observability</button>
+            onclick="changeTab(event, 'partial_observability_tabletop', '_tabletop')">Partial Observability</button> -->
         </div>
 
         <div id="human_perturbation_tabletop" class="tabcontent">
@@ -329,6 +320,49 @@
         <div id="initial_conditions_tabletop" class="tabcontent">
           <video id="method" autoplay muted loop controls height="100%" width="100%">
             <source src="media/videos/initial_conditions.mp4">
+          </video>
+        </div>
+
+        <p style="margin-bottom:1cm;"></p>
+
+        <h2 class="title is-3">Real-World Tabletop Setting | Make Tea</h2>
+
+        <div class="tab">
+          <button class="tablinks" id="initial_conditions_make_tea_button"
+            onclick="changeTab(event, 'initial_conditions_make_tea', '_make_tea')" id="defaultOpen">Unseen Initial
+            Conditions</button>
+          <button class="tablinks" id="human_perturbation_make_tea_button"
+            onclick="changeTab(event, 'human_perturbation_make_tea', '_make_tea')">Human Perturbation</button>
+          <button class="tablinks" id="geometric_constraints_make_tea_button"
+            onclick="changeTab(event, 'geometric_constraints_make_tea', '_make_tea')">Geometric Constraints</button>
+          <button class="tablinks" id="partial_observability_make_tea_button"
+            onclick="changeTab(event, 'partial_observability_make_tea', '_make_tea')">Partial Observability</button>
+        </div>
+
+        <div id="human_perturbation_make_tea" class="tabcontent">
+          <video id="method" autoplay muted loop controls height="100%" width="100%">
+            <source src="media/videos/human_perturbation_make_tea.mp4">
+          </video>
+          <p style="margin-bottom:1cm;"></p>
+        </div>
+
+        <div id="partial_observability_make_tea" class="tabcontent">
+          <video id="method" autoplay muted loop controls height="100%" width="100%">
+            <source src="media/videos/partial_obs_make_tea.mp4">
+          </video>
+          <p style="margin-bottom:1cm;"></p>
+        </div>
+
+        <div id="geometric_constraints_make_tea" class="tabcontent">
+          <video id="method" autoplay muted loop controls height="100%" width="100%">
+            <source src="media/videos/geometric_constraints_make_tea.mp4">
+          </video>
+          <p style="margin-bottom:1cm;"></p>
+        </div>
+
+        <div id="initial_conditions_make_tea" class="tabcontent">
+          <video id="method" autoplay muted loop controls height="100%" width="100%">
+            <source src="media/videos/initial_conditions_make_tea.mp4">
           </video>
         </div>
 
@@ -460,6 +494,7 @@
 <script>
   document.getElementById('initial_conditions_real_kitchen_button').click();
   document.getElementById('initial_conditions_tabletop_button').click();
+  document.getElementById('initial_conditions_make_tea_button').click();
 </script>
 
 
