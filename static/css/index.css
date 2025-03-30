@@ -335,3 +335,11 @@ hr.rounded {
   from {opacity: 0;}
   to {opacity: 1;}
 }
+
+.venue {
+  font-size: 1.5em;
+  font-family: 'Google Sans', sans-serif;
+  color: #2c2c2c;
+  padding-top: 0.5em;
+  text-align: center;
+}
